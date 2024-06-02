@@ -9,7 +9,7 @@ load_dotenv()
 # Set your PagerDuty and Slack tokens here
 PAGERDUTY_API_TOKEN = os.getenv('PAGERDUTY_API_TOKEN')
 SLACK_BOT_TOKEN = os.getenv('SLACK_BOT_TOKEN')
-SLACK_CHANNEL = '#myoncallhero'
+SLACK_CHANNEL = '#incidents'
 PRIMARY_SCHEDULE_ID = 'P2MDXW9'  # Replace with your primary PagerDuty schedule ID
 SECONDARY_SCHEDULE_ID = 'PKOXF2X'  # Replace with your secondary PagerDuty schedule ID
 # Fetch on-call information from PagerDuty schedule
