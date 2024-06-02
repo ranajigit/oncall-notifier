@@ -1,7 +1,7 @@
 name: Send On-Call Person to Slack
 on:
   schedule:
-    - cron: '0 */2 * * *' # Run every 2 hours
+    - cron: '0 */1 * * *' # Run every 1 hours to test
 jobs:
   send-oncall-slack:
     runs-on: ubuntu-latest
