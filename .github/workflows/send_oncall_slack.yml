@@ -1,7 +1,7 @@
 name: Send On-Call Person to Slack
 on:
   schedule:
-    - cron: '54 15 * * 1' #should run at 09:00 am PST/09:30 pm IST,Every Monday.
+    - cron: '5 8 * * 1-5' #expression to run a job at 8:05 AM from Monday to Friday.
   workflow_dispatch:
 jobs:
   send-oncall-slack:
