@@ -11,8 +11,8 @@ load_dotenv()
 PAGERDUTY_API_TOKEN = os.getenv('PAGERDUTY_API_TOKEN')
 SLACK_BOT_TOKEN = os.getenv('SLACK_BOT_TOKEN')
 SLACK_CHANNEL = '#myoncallhero'
-PRIMARY_SCHEDULE_ID = 'P2MDXW9'  # Replace with your primary PagerDuty schedule ID
-SECONDARY_SCHEDULE_ID = 'PKOXF2X'  # Replace with your secondary PagerDuty schedule ID
+PRIMARY_SCHEDULE_ID = 'P2WVSFU'  # Replace with your primary PagerDuty schedule ID
+SECONDARY_SCHEDULE_ID = 'PNBRGBP'  # Replace with your secondary PagerDuty schedule ID
 # Fetch on-call information from PagerDuty schedule
 def get_oncall_user(schedule_id, time_range):
     now = datetime.now(timezone.utc)
@@ -52,8 +52,8 @@ def main():
         secondary_oncall_user = get_oncall_user(SECONDARY_SCHEDULE_ID, week_number)
         if primary_oncall_user or secondary_oncall_user:
             current_week = "This week" if week_number == 0 else f"{week_number} weeks out"
-            primary_message = f'*{current_week} Primary Incident Manager*: {primary_oncall_user}' if primary_oncall_user else ''
-            secondary_message = f'*{current_week} Secondary Incident Manager*: {secondary_oncall_user}' if secondary_oncall_user else ''
+            primary_message = f'*{current_week} Primary On-call*: {primary_oncall_user}' if primary_oncall_user else ''
+            secondary_message = f'*{current_week} Secondary On-call*: {secondary_oncall_user}' if secondary_oncall_user else ''
             message = f'{primary_message}\n{secondary_message}'
             messages.append(message)
     final_message = '\n\n'.join(messages)
